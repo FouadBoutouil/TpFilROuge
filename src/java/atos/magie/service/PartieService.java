@@ -414,5 +414,10 @@ public class PartieService {
     public void SelectionIngredient() {
 
     }
+    public List<Joueur> afficherPartieNonDemarer(long id){
+        PartieDAO dao = new PartieDAO();
+        Partie c = dao.rechercherPartieParID(id);
+        return dao.joueurPartieNonDemarer(id);
+    }
 
 }

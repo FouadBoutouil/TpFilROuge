@@ -30,10 +30,11 @@
             <div class="mon_tableau">
                 
                 <c:forEach items="${listePartie}" var="parAct">
-                    <p> ${parAct.nom} </p> <a href=""> rejoindre </a>
+                    <p> ${parAct.nom} </p> <a href="Login?id=${parAct.id}"> rejoindre </a>
+                    <!--je dois recuperer lid de la partie choisi -->
                     <br> 
                 </c:forEach>
-            </div>
+               </div>
             <div>
                 <a href="/CrerNouvellePartie"> Créer nouvelle partie </a>            
             </div>

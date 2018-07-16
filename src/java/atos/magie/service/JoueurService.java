@@ -112,5 +112,11 @@ public class JoueurService {
         }
         return joueur;
     }
+    public void ajouterJoueur(String pseudo,String avatar){
+        Joueur joueur = new Joueur();
+        joueur.setPseudo(pseudo);
+        joueur.setAvatar(avatar);
+        dao.ajouter(joueur);
+    }
 
 }

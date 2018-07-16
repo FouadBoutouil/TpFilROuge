@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atos.magie.sevlet;
+package atos.magie.servlet;
 
 import atos.magie.entity.Partie;
 import atos.magie.service.PartieService;

@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atos.magie.sevlet;
+package atos.magie.servlet;
 
-import atos.magie.service.PartieService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,14 +17,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Administrateur
  */
-@WebServlet(name = "ListerPartiesNonDemaré", urlPatterns = {"/listerParties"})
-public class ListerPartiesNonDemare extends HttpServlet {
-    PartieService serviceP = new PartieService();
+@WebServlet(name = "EcranFinal", urlPatterns = {"/EcranFinal"})
+public class PartieFIN extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
-        req.setAttribute("listePartie", serviceP.listePartiesNonDemaree());
-        req.getRequestDispatcher("listerParties.jsp").forward(req, resp);
+        req.getRequestDispatcher("EcranPartie.jsp").forward(req, resp);
     }
     
 }

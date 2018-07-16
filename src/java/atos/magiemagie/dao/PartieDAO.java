@@ -33,8 +33,6 @@ public class PartieDAO {
 //                + "WHERE j.EtatJoueur IN (:etat_gagne,:etat_alamain)");
 //        query.setParameter("etat_gagne", Joueur.EtatJoueur.gagné);
 //        query.setParameter("etat_alamain", Joueur.EtatJoueur.napaLaMain);
-
-
 //        Query query = em.createQuery("SELECT P FROM Partie P JOIN P.joueurs j1"
 //                + " EXCEPT "
 //                + " SELECT P FROM Partie P JOIN P.joueurs j1 WHERE j1.etat=:etat1"
@@ -43,13 +41,13 @@ public class PartieDAO {
 //        query.setParameter("etat1", Joueur.EtatJoueur.gagné);
 //        query.setParameter("etat2", Joueur.EtatJoueur.aLamain);
         // mezme requete gagné
-       Query query = em.createQuery("SELECT p FROM Partie p "
+        Query query = em.createQuery("SELECT p FROM Partie p "
                 + "                   EXCEPT "
                 + "                   SELECT p1 FROM Partie p1 JOIN p1.joueurs j"
                 + "                   WHERE j.etat=:etat_gagne OR j.etat=:etat_alamain");  //IN (:etat_gagne,:etat_alamain)");
         query.setParameter("etat_gagne", Joueur.EtatJoueur.gagné);
         query.setParameter("etat_alamain", Joueur.EtatJoueur.aLamain);
-        
+
         return query.getResultList();
 
     }
@@ -138,5 +136,15 @@ public class PartieDAO {
         //long nbrCarteJoueur = (long) requete2.getSingleResult();
         // c pas la peine de l'ecrire puis on peut l'obtenir en comptant le nombre d'element de la liste
         return carteJoueur;
+    }
+    // cette fonction affiche tous les jouerurs dans une partie ** amélioration ** inclure le joueur qui affiche
+    //et l'afficher ( son pseudfo en bas par exemple 
+
+    public List<Joueur> joueurPartieNonDemarer(long id) {
+        EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
+        Query requet = em.createQuery("SELECT j FROM Joueur j JOIN j.partieNow p WHERE p.id=:var");
+        requet.setParameter("var", id);
+        List<Joueur> joueursTable = requet.getResultList();
+        return joueursTable;
     }
 }
