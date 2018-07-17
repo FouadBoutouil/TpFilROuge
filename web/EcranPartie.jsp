@@ -12,23 +12,49 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="./CSS/style5.css" rel="stylesheet" type="text/css"/>
         <title>Partie en cours</title>
     </head>
     <body>
-        <h1> Ecran de jeu </h1>
-        <div>
-            <c:forEach items="${MesJoueursDeLaPartie}" var="joueurACT">
-                pseudo du joueur  <p> ${joueurACT.pseudo}</p>
-                Nombre de Carte   <p> ${joueurACT.getCartes().size()}</p>
-            </c:forEach>
-        <h1>  </h1>
-        </div>
-        
+        <header>
+            <h1> Ma sorciere JPA </h1>
+            <!-- une image Logo -->
+        </header>
 
+        <nav>
+        </nav>
+        <section>
+
+            <div class="joueursEnemi">
+                <c:forEach items="${MesJoueursDeLaPartie}" var="joueurACT">
+                    <div class="Joueur">  
+                      <p> PSEUDO : ${joueurACT.pseudo}</p>
+                      <p> IL A : ${joueurACT.getCartes().size()} CARTES</p>
+                    </div>
+                </c:forEach>
+                
+            </div>
+            <div class="milieu">
+                <input type="submit" value="LANCER SORT"/>
+                
+                <input type="submit" value="PASSER MON TOUR" />
+            </div>
+            <div class="player">
+                <p> ${JoueurAlaMain.getPseudo()} </p>
+                <p> ${JoueurAlaMain.getAvatar()} </p>
+                <c:forEach items="${JoueurAlaMain.getCartes()}" var="carte">
+                    <p> ${carte.getIngredient()} une oulalalalalalalalal </p>
+                </c:forEach>
+            </div>
+        </section>
+
+        <footer>            
+        </footer>
 
     </body>
 </html>

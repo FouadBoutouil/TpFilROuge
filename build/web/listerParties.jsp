@@ -30,7 +30,7 @@
             <div class="mon_tableau">
                 
                 <c:forEach items="${listePartie}" var="parAct">
-                    <p> ${parAct.nom} </p> <a href="Login?id=${parAct.id}"> rejoindre </a>
+                    <p> ${parAct.nom} </p> <a href="Login?id=${parAct.id}"> REJOINDRE </a>
                     <!--je dois recuperer lid de la partie choisi -->
                     <br> 
                 </c:forEach>

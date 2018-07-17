@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/listerParties.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/EcranInscriptionJoueurSurPartieChoisi.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/servlet/ListerJoueurPartieNonDemarer.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/servlet/CrerNouvellePartie.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/servlet/ListerPartiesNonDemare.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/login.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/__Theme.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magiemagie/dao/JoueurDAO.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/service/JoueurService.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/CreerNouvelleParti.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/servlet/Login.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/servlet/PartieFIN.java</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/TableauDeBordJeuFinal.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/EcranPartie.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/web/JoueurDeLaPartieRejointNonDémarée.jsp</file>
+            <file>file:/C:/Users/Administrateur/Documents/NetBeansProjects/MagieMagieWeb/src/java/atos/magie/entity/Joueur.java</file>
+        </group>
+    </open-files>
+</project-private>

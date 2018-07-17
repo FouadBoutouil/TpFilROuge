@@ -77,13 +77,15 @@ public class JoueurService {
 
         //daoCarte.modifierCarte(carteActuelle);
     }
+
     // on affecte la liste finale generé aux joueurs
     /**
-     * 
+     *
      * @param pseudo
      * @param avatar
      * @param idPartie
-     * @return  vette fonction creer un nouvel utilisateur et l'affecte a une partie exsistante
+     * @return vette fonction creer un nouvel utilisateur et l'affecte a une
+     * partie exsistante
      */
     public Joueur rejoindrePartie(String pseudo, String avatar, long idPartie) {
         // recherche si le joueur exsiste deja 
@@ -112,11 +114,32 @@ public class JoueurService {
         }
         return joueur;
     }
-    public void ajouterJoueur(String pseudo,String avatar){
+
+    public void ajouterJoueur(String pseudo, String avatar) {
         Joueur joueur = new Joueur();
         joueur.setPseudo(pseudo);
         joueur.setAvatar(avatar);
         dao.ajouter(joueur);
+    }
+
+    /**
+     * renvoie juste le nombre de carte, pour le joueur qui a la main je vais
+     * utiliser du polymorphisme !!!
+     *
+     * @param idJoueur
+     * @return
+     */
+    public long afficheCarte(long idJoueur) {
+        Joueur joueurBeta = dao.rechercheJoueurParID(idJoueur);
+        return (long) joueurBeta.getCartes().size();
+    }
+
+    public Joueur rechercheJoueurParID(long idJoueur) {
+        return dao.rechercheJoueurParID(idJoueur);
+    }
+
+    public Joueur rechercheJoueurQuiAlaMain(long idPartie) {
+        return dao.rechercheJoueurQuiAlaMain(idPartie);
     }
 
 }

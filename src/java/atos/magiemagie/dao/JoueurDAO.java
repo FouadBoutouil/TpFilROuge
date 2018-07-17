@@ -18,14 +18,13 @@ import javax.persistence.Query;
 public class JoueurDAO {
 
     public Joueur rechercheJoueurQuiAlaMain(long idPartie) {
-       Joueur joueur = new Joueur();
 //        return joueur;
 
         // LE REQUETE RECUPERE TOUS LES JOUEURS DE LA PARTIE ET RETOURNE CELUI QUI A LA MAIN ---------- ON CHERCHE DANS état
-    EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
-    Query requete = em.createQuery("SELECT J FROM Joueur J WHERE J.etat= :variable");
-    requete.setParameter("variable",Joueur.EtatJoueur.aLamain);
-    return (Joueur) requete.getSingleResult();
+        EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
+        Query requete = em.createQuery("SELECT J FROM Joueur J WHERE J.etat= :variable");
+        requete.setParameter("variable", Joueur.EtatJoueur.aLamain);
+        return (Joueur) requete.getSingleResult();
     }
 
     public Joueur rechercherParPseudo(String pseudo) {
@@ -74,18 +73,17 @@ public class JoueurDAO {
     }
 
     public void modifier(Joueur joueur) {
-EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
+        EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
         em.getTransaction().begin();
         em.merge(joueur); // mise a jour
         em.getTransaction().commit();
     }
 
-   
     public Joueur rechercheJoueurParID(long idJoueur) {
-            
+
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
-        return em.find(Joueur.class,idJoueur);
-           
+        return em.find(Joueur.class, idJoueur);
+
     }
 
 }

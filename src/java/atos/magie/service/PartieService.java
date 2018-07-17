@@ -12,6 +12,7 @@ import atos.magie.entity.Partie;
 import atos.magiemagie.dao.CarteDAO;
 import atos.magiemagie.dao.JoueurDAO;
 import atos.magiemagie.dao.PartieDAO;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -109,7 +110,7 @@ public class PartieService {
         // fonction pour persisiter les données
         //volerCarteDao();
     }
-    
+
     private void filtreAmour(long idPartie) {
         // recupere les deux joueurs 
         // on aplique la fonction voler carte et le nombre de carte c'est modulo deux '
@@ -119,11 +120,11 @@ public class PartieService {
         System.out.println("!!!! Veuillez rentrer l' id de votre Victime !!!!");
         long idJoueurCIB = scan.nextInt();
         Joueur joueurCIB = dao.rechercherJoueurParID(idJoueurCIB);
-        long nombreDeCarte = joueurCIB.getCartes().size() % 2 ;
-        
+        long nombreDeCarte = joueurCIB.getCartes().size() % 2;
+
         for (int i = 0; nombreDeCarte < 10; i++) {
-             volerCarte(joueurLanc.getId(), idJoueurCIB);
-        }   
+            volerCarte(joueurLanc.getId(), idJoueurCIB);
+        }
     }
 
     public enum Sort {
@@ -244,35 +245,35 @@ public class PartieService {
         serv.distribuerCarte(joueur.getId(), 1);
     }
 
+    public Partie rechercherPartieParID(long idPartie) {
+        PartieDAO daoP = new PartieDAO();
+        return daoP.rechercherPartieParID(idPartie);
+    }
+
+    /**
+     *
+     * @param idPartie Cette fonction doit renvoyer pour chaque joueur son
+     * nom,nombre de carte(son etat eventuelement) cette fonction est en veille
+     * je sais pas quoi faire avec
+     */
     public void listerJoueuretLeurCarte(long idPartie) {
-        // recupere la liste des joueur de la partie 
-        // boucle for américain d
-// verifie l'état pour afficher 
-        Partie maPartie = dao.rechercherPartieParID(idPartie);
-        Joueur joueurNow = daoJoueur.rechercheJoueurQuiAlaMain(idPartie);
-        // recupere liste joueur
-        List<Joueur> joueurNimportequi = maPartie.getJoueurs();
-        // liste des joueur qui n'ont pas la main 
-        joueurNimportequi.remove(joueurNow);
-        List<Carte> main = dao.afficheMain(joueurNow.getId());
-        // affiche joueur de la table 
-        System.out.println(" Voici tous joueurs de cette table : ");
-        for (int i = 2; i < joueurNimportequi.size(); i++) {
-            System.out.println("cartes" + "J1" + joueurNimportequi.get(i).getPseudo() + "Il a :" + joueurNimportequi.get(i).getCartes().size());
-        }
+        // je recupere les joueurs de la partie
+        // je dois la faire pour un seul joueur et a la fin je transmet un tableau 
 
-        // affiche le joueur qui a la main et ses cartes
-        System.out.println("c'est votre tour  : " + joueurNow.getPseudo() + " Vous avez  : " + joueurNow.getCartes().size() + " cartes");
-        for (int i = 0; i < main.size(); i++) {
-            System.out.println(main.get(i).getIngredient());
-        }
-        // boucle pour aficher les joueur et le nombre de carte de chacun  
-        System.err.println("-_-_-_-_-_-_-LA TABLE-_-_-_-_-_-_");   /// ???????????????????
-        for (int i = 0; i < joueurNimportequi.size(); i++) {
-            // affiche pour un joueur pseudo et nombre de carte 
-            System.out.println("Nom Joueur " + joueurNimportequi.get(i).getPseudo() + " nombre de carte : " + joueurNimportequi.get(i).getCartes().size());
-        }
+        JoueurDAO daoJ = new JoueurDAO();
+        JoueurService serviceJ = new JoueurService();
+        PartieService serviceP = new PartieService();
+        Partie maPartie = serviceP.rechercherPartieParID(idPartie);
+        List<Joueur> listeJoueurs = maPartie.getJoueurs();
+        // pour chaque joueur je recupere le nombre de ces cartes
+        List<Carte> main = new ArrayList();
+        Long nbrCarte = (long) main.size();
 
+        for (Joueur joueurJ : listeJoueurs) {
+            joueurJ.getPseudo();
+
+        }
+        // pour le joueur actuel affiche nom et pour chaque sort le nbr de carte possédé
     }
 
     public void lancerSort(long idPartie, Carte.Ingredient carte1, Carte.Ingredient carte2) {
@@ -414,10 +415,42 @@ public class PartieService {
     public void SelectionIngredient() {
 
     }
-    public List<Joueur> afficherPartieNonDemarer(long id){
+
+    public List<Joueur> afficherPartieNonDemarer(long id) {
         PartieDAO dao = new PartieDAO();
         Partie c = dao.rechercherPartieParID(id);
         return dao.joueurPartieNonDemarer(id);
     }
-
 }
+// cette fonction est valable pour le mode console
+
+//    public void listerJoueuretLeurCarte(long idPartie) {
+//            // recupere la liste des joueur de la partie 
+//            // boucle for américain d
+//            // verifie l'état pour afficher 
+//            Partie maPartie = dao.rechercherPartieParID(idPartie);
+//            Joueur joueurNow = daoJoueur.rechercheJoueurQuiAlaMain(idPartie);
+//            // recupere liste joueur
+//            List<Joueur> joueurNimportequi = maPartie.getJoueurs();
+//            // liste des joueur qui n'ont pas la main 
+//            joueurNimportequi.remove(joueurNow);
+//            List<Carte> main = dao.afficheMain(joueurNow.getId());
+//            // affiche joueur de la table 
+//            System.out.println(" Voici tous joueurs de cette table : ");
+//            for (int i = 2; i < joueurNimportequi.size(); i++) {
+//                System.out.println("cartes" + "J1" + joueurNimportequi.get(i).getPseudo() + "Il a :" + joueurNimportequi.get(i).getCartes().size());
+//            }
+//
+//            // affiche le joueur qui a la main et ses cartes
+//            System.out.println("c'est votre tour  : " + joueurNow.getPseudo() + " Vous avez  : " + joueurNow.getCartes().size() + " cartes");
+//            for (int i = 0; i < main.size(); i++) {
+//                System.out.println(main.get(i).getIngredient());
+//            }
+//            // boucle pour aficher les joueur et le nombre de carte de chacun  
+//            System.err.println("-_-_-_-_-_-_-LA TABLE-_-_-_-_-_-_");   /// ???????????????????
+//            for (int i = 0; i < joueurNimportequi.size(); i++) {
+//                // affiche pour un joueur pseudo et nombre de carte 
+//                System.out.println("Nom Joueur " + joueurNimportequi.get(i).getPseudo() + " nombre de carte : " + joueurNimportequi.get(i).getCartes().size());
+//            }
+//
+//        }

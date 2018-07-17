@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * joueur table affiche une liste de tous les joueurs dazns table 
  */
 @WebServlet(name = "partieNonDémarer", urlPatterns = {"/JoueurPartieNonDem"})
-public class ListerJoueurPartieNonDemarer extends HttpServlet {
+public class ListerJoueurPartieNonDemarerServlet extends HttpServlet {
     PartieService serviceP = new PartieService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

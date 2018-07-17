@@ -5,6 +5,7 @@
  */
 package atos.magie.servlet;
 
+import atos.magie.service.PartieService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,12 +18,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Administrateur
  */
-@WebServlet(name = "EcranFinal", urlPatterns = {"/EcranFinal"})
-public class PartieFIN extends HttpServlet {
+@WebServlet(name = "ListerPartiesNonDemaré", urlPatterns = {"/listerParties"})
+public class ListerPartiesNonDemareServlet extends HttpServlet {
+
+    PartieService serviceP = new PartieService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("EcranPartie.jsp").forward(req, resp);
+
+        req.setAttribute("listePartie", serviceP.listePartiesNonDemaree());
+        req.getRequestDispatcher("listerParties.jsp").forward(req, resp);
     }
-    
+
 }

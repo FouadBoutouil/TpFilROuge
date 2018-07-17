@@ -54,19 +54,23 @@ public final class EcranInscriptionJoueurSurPartieChoisi_jsp extends org.apache.
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("\t<head>\n");
-      out.write("\t\t<title> page de démarage</title>\n");
-      out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"styleB.css\">\n");
-      out.write("\t\t<meta charset=\"utf-8\">\n");
-      out.write("\t</head>\n");
-      out.write("\t\n");
-      out.write("\t<body>\n");
-      out.write("            <div class=\"main\">\n");
-      out.write("\t\t<div class=\"titre_tableau\"> \n");
-      out.write("\t\t\tJoueurs de cette partie ( je veux afficher ici le numero de la partie et son nom )\t\n");
-      out.write("\t\t</div>\n");
-      out.write("\t\t\t<div class=\"mon_tableau\">\n");
-      out.write("                            ");
+      out.write("    <head>\n");
+      out.write("        <title> page de démarage</title>\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"styleB.css\">\n");
+      out.write("        <meta charset=\"utf-8\">\n");
+      out.write("    </head>\n");
+      out.write("\n");
+      out.write("    <body>\n");
+      out.write("        <div class=\"main\">\n");
+      out.write("            <div class=\"titre_tableau\"> \n");
+      out.write("                Joueurs de cette partie ( je veux afficher ici le numero de la partie et son nom )\n");
+      out.write("                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${dolar}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                <br><br>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"mon_tableau\">\n");
+      out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\n");
@@ -74,12 +78,12 @@ public final class EcranInscriptionJoueurSurPartieChoisi_jsp extends org.apache.
       out.write("                a chacun de demarer la partie  -->  \n");
       out.write("            </div>\n");
       out.write("\n");
-      out.write("\t\t<div class=\"Demarrerpartie\">\n");
-      out.write("\t\t\t\t\t <button type=\"button\" value=\"rejoindre\"> <a href=\"file:///C:/Users/Administrateur/Desktop/Documentation_java/page3.html\"> Demarer partie  </button> </a>\n");
-      out.write("\t\t\t\t\t <button type=\"button\" value=\"rejoindre\"> <a href=\"file:///C:/Users/Administrateur/Desktop/Documentation_java/brouillion.html\"> quitter partie </button> </a>\n");
-      out.write("\t\t</div>\n");
-      out.write("\t\n");
-      out.write("\t</body>\n");
+      out.write("            <div class=\"Demarrerpartie\">\n");
+      out.write("                <button type=\"button\" value=\"rejoindre\"> <a href=\"file:///C:/Users/Administrateur/Desktop/Documentation_java/page3.html\"> Demarer partie  </button> </a>\n");
+      out.write("                <button type=\"button\" value=\"rejoindre\"> <a href=\"file:///C:/Users/Administrateur/Desktop/Documentation_java/brouillion.html\"> quitter partie </button> </a>\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("    </body>\n");
       out.write("\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -111,11 +115,12 @@ public final class EcranInscriptionJoueurSurPartieChoisi_jsp extends org.apache.
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("                    <p> ");
+          out.write("                    nom du joueur     <p> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${parAct.pseudo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" </p> <a href=\"\"> nom du joueur </a>\n");
-          out.write("                        <!-- je dois recuperer l'id de la pârtie choisis et l'envoyer dans ma servlet-->\n");
-          out.write("                        ecran joueur dansz une partie\n");
+          out.write(" </p>  \n");
+          out.write("                    <!-- je dois recuperer l'id de la pârtie choisis et l'envoyer dans ma servlet-->\n");
+          out.write("                    <input type=\"submit\"/><a href=\"EcranFinal\"> demarrer partie</a> </input>\n");
+          out.write("                    <a href=\"listerParties\"> quitter partie</a>\n");
           out.write("                    <br> \n");
           out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();

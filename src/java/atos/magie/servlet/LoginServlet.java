@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Administrateur
  */
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     // affiche la page de login 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,9 +39,10 @@ public class Login extends HttpServlet {
         JoueurService serviceJ = new JoueurService();
         String pseudo = (String) req.getParameter("pseudo");
         String avatar = (String) req.getParameter("avatar");
-        //daoJ.ajouter(j);
+        //id de la partie en session 
         long idpartie = Long.parseLong(req.getSession().getAttribute("idPartie").toString());
         req.getSession().setAttribute("dolar", idpartie);
+        req.getSession().setAttribute("PseudoSession", idpartie);
         serviceJ.rejoindrePartie(pseudo, avatar, idpartie);
 //        // redirige vers la page qui affiche les joueurs dune pârtie en attente de dermarage
 
