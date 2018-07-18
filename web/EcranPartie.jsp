@@ -17,44 +17,48 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="./CSS/style5.css" rel="stylesheet" type="text/css"/>
+        <link href="./CSS/5point1.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <link href="url(https://fonts.googleapis.com/css?family=Denk+One)" rel="stylesheet">
         <title>Partie en cours</title>
     </head>
     <body>
-        <header>
-            <h1> Ma sorciere JPA </h1>
-            <!-- une image Logo -->
-        </header>
+        <div class="boite">    
+            <header> 
+                <img class="logo" src="CSS/logo5.gif" alt=""/>
+                <h1> Ma sorciere JPA </h1>
+                <!-- une image Logo -->
+            </header>
 
-        <nav>
-        </nav>
-        <section>
+            <nav>
+            </nav>
+            <section>
 
-            <div class="joueursEnemi">
-                <c:forEach items="${MesJoueursDeLaPartie}" var="joueurACT">
-                    <div class="Joueur">  
-                      <p> PSEUDO : ${joueurACT.pseudo}</p>
-                      <p> IL A : ${joueurACT.getCartes().size()} CARTES</p>
-                    </div>
-                </c:forEach>
-                
-            </div>
-            <div class="milieu">
-                <input type="submit" value="LANCER SORT"/>
-                
-                <input type="submit" value="PASSER MON TOUR" />
-            </div>
-            <div class="player">
-                <p> ${JoueurAlaMain.getPseudo()} </p>
-                <p> ${JoueurAlaMain.getAvatar()} </p>
-                <c:forEach items="${JoueurAlaMain.getCartes()}" var="carte">
-                    <p> ${carte.getIngredient()} une oulalalalalalalalal </p>
-                </c:forEach>
-            </div>
-        </section>
+                <div class="joueursEnemi">
+                    <c:forEach items="${MesJoueursDeLaPartie}" var="joueurACT">
+                        <div class="Joueur">  
+                            <p> PSEUDO : ${joueurACT.pseudo}</p>
+                            <p> IL A : ${joueurACT.getCartes().size()} CARTES</p>
+                        </div>
+                    </c:forEach>
 
-        <footer>            
-        </footer>
+                </div>
+                <div class="milieu">
+                    <input type="submit" value="LANCER SORT"/>
 
+                    <input type="submit" value="PASSER MON TOUR" />
+                </div>
+                <div class="player">
+                    <p> ${JoueurAlaMain.getPseudo()} </p>
+                    <p> ${JoueurAlaMain.getAvatar()} </p>
+                    <c:forEach items="${JoueurAlaMain.getCartes()}" var="carte">
+                        <p> ${carte.getIngredient()} une oulalalalalalalalal </p>
+                    </c:forEach>
+                </div>
+            </section>
+
+            <footer>            
+            </footer>
+        </div>                             
     </body>
 </html>

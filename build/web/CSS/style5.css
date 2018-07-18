@@ -29,3 +29,6 @@ div.player{
     border-radius: 20px;
     margin: 10px;
 }
+header{
+    display: flex;
+}
