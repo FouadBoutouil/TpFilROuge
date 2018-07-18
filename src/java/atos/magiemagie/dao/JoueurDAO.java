@@ -22,8 +22,9 @@ public class JoueurDAO {
 
         // LE REQUETE RECUPERE TOUS LES JOUEURS DE LA PARTIE ET RETOURNE CELUI QUI A LA MAIN ---------- ON CHERCHE DANS état
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
-        Query requete = em.createQuery("SELECT J FROM Joueur J WHERE J.etat= :variable");
+        Query requete = em.createQuery("SELECT j FROM Joueur j JOIN j.partieNow p WHERE p.id= :id AND j.etat= :variable");
         requete.setParameter("variable", Joueur.EtatJoueur.aLamain);
+        requete.setParameter("id", idPartie);
         return (Joueur) requete.getSingleResult();
     }
 

@@ -32,11 +32,12 @@
                 <c:forEach items="${listePartie}" var="parAct">
                     <p> ${parAct.nom} </p> <a href="Login?id=${parAct.id}"> REJOINDRE </a>
                     <!--je dois recuperer lid de la partie choisi -->
+                    <!--je dois afficher le nombre de joueur inscrit dansd une partie -->
                     <br> 
                 </c:forEach>
                </div>
             <div>
-                <a href="/CrerNouvellePartie"> Créer nouvelle partie </a>            
+                <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a>            
             </div>
         </div>
 
