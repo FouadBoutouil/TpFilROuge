@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
               integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link href= "https://fonts.googleapis.com/css?family=Denk+One" rel="stylesheet/less" type="text/css" href="CSS/1.less">
+        <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
         <meta charset="utf-8">
         <title> INTERFACE JEUX CARTE </title>
         <script src='http://use.edgefonts.net/nosifer.js'></script>
