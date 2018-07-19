@@ -1,0 +1,14 @@
+SMAP
+lister_002dparties_jsp.java
+JSP
+*S JSP
+*F
++ 0 lister-parties.jsp
+lister-parties.jsp
+*L
+1,25:54
+25:113,11
+26:124,5
+27,4:129
+30,14:81
+*E

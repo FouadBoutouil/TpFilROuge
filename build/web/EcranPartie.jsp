@@ -25,7 +25,9 @@
     <body>
         <div class="boite">    
             <header> 
-                <img class="logo" src="CSS/logo5.gif" alt=""/>
+                <div class="image">
+                <img class="logo"src="CSS/2.GIF" alt=""/>
+                </div>
                 <h1> Ma sorciere JPA </h1>
                 <!-- une image Logo -->
             </header>
@@ -44,9 +46,10 @@
 
                 </div>
                 <div class="milieu">
-                    <input type="submit" value="LANCER SORT"/>
+                    
+                    <span><a><input type="submit" value="LANCER SORT"/></a></span>
 
-                    <input type="submit" value="PASSER MON TOUR" />
+                    <span><input type="submit" value="PASSER MON TOUR" /></a></span>
                 </div>
                 <div class="player">
                     <p> ${JoueurAlaMain.getPseudo()} </p>

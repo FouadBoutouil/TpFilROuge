@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styleeclair.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+              integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href= "https://fonts.googleapis.com/css?family=Denk+One" rel="stylesheet/less" type="text/css" href="CSS/1.less">
         <meta charset="utf-8">
         <title> INTERFACE JEUX CARTE </title>
         <script src='http://use.edgefonts.net/nosifer.js'></script>
@@ -28,14 +30,16 @@
             </div>
             <br><br>
             <div class="mon_tableau">
-                
+
                 <c:forEach items="${listePartie}" var="parAct">
                     <p> ${parAct.nom} </p> <a href="Login?id=${parAct.id}"> REJOINDRE </a>
                     <!--je dois recuperer lid de la partie choisi -->
                     <!--je dois afficher le nombre de joueur inscrit dansd une partie -->
                     <br> 
                 </c:forEach>
-               </div>
+            </div>
+
+           
             <div>
                 <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a>            
             </div>

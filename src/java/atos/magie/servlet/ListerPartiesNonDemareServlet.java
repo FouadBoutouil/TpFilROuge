@@ -27,7 +27,7 @@ public class ListerPartiesNonDemareServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setAttribute("listePartie", serviceP.listePartiesNonDemaree());
-        req.getRequestDispatcher("listerParties.jsp").forward(req, resp);
+        req.getRequestDispatcher("lister-parties.jsp").forward(req, resp);
     }
 
 }
