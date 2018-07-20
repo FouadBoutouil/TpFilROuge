@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,14 +22,22 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                   <c:forEach items="${listePartie}" var="parAct">
-                    <button type="button" class="btn btn-outline-warning">
-                        <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a></button>
-                    <button type="button" class="btn btn-outline-warning"><a href="Login?id=${parAct.id}"> REJOINDRE </a></button>
+
+                <c:forEach items="${listePartie}" var="parAct">
+                    <p> ${parAct.nom} </p> <button type="button" class="btn btn-outline-warning">
+                        <a href="Login?id=${parAct.id}"> REJOINDRE </a></button>
                     <br> 
-                </c:forEach>      
+                </c:forEach>
+                <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a>    
+            </div>
+                <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle Par </a>
+           
+            <div>
+                            <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle RR </a>
+            </div>    
                     
                 </div>
+             <button type="button" class="btn btn-outline-warning"><a href="Login?id=${parAct.id}"> REJOINDRE </a></button>   
             </div>
             <div class="row">
                 bite
