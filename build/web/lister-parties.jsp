@@ -1,11 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link href="CSS/premier.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -22,14 +22,22 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                   <c:forEach items="${listePartie}" var="parAct">
-                    <button type="button" class="btn btn-outline-warning">
-                        <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a></button>
-                    <button type="button" class="btn btn-outline-warning"><a href="Login?id=${parAct.id}"> REJOINDRE </a></button>
+
+                <c:forEach items="${listePartie}" var="parAct">
+                    <p> ${parAct.nom} </p> <button type="button" class="btn btn-outline-warning">
+                        <a href="Login?id=${parAct.id}"> REJOINDRE </a></button>
                     <br> 
-                </c:forEach>      
+                </c:forEach>
+                <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle partie </a>    
+            </div>
+                <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle Par </a>
+           
+            <div>
+                            <a href="<c:url value="/CrerNouvellePartie"/>">Créer nouvelle RR </a>
+            </div>    
                     
                 </div>
+             <button type="button" class="btn btn-outline-warning"><a href="Login?id=${parAct.id}"> REJOINDRE </a></button>   
             </div>
             <div class="row">
                 bite

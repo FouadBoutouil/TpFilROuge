@@ -12,6 +12,7 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
   private static java.util.List<String> _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,10 +22,12 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -52,13 +55,13 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <!-- Bootstrap CSS -->\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css\" integrity=\"sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B\" crossorigin=\"anonymous\">\n");
       out.write("        <link href=\"CSS/premier.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/css?family=Nosifer\" rel=\"stylesheet\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container\">\n");
@@ -67,22 +70,36 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
       out.write("                    logo\n");
       out.write("                </div>\n");
       out.write("                <div class=\"col-lg-7\">\n");
-      out.write("                    titre\n");
+      out.write("                    <div id=\"titreJeu\"> Ma Partie JPA</div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"row\">\n");
-      out.write("                Partie Disponible\n");
+      out.write("                <p class=\"text\">Partie Disponible</p>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"row\">\n");
       out.write("                <div class=\"col-lg-12\">\n");
-      out.write("                    ");
+      out.write("\n");
+      out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("           \n");
+      out.write("            <div>\n");
+      out.write("                <a href=\"");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\">Créer nouvelle partie </a>            \n");
+      out.write("            </div>    \n");
+      out.write("                    \n");
       out.write("                </div>\n");
+      out.write("             <button type=\"button\" class=\"btn btn-outline-warning\"><a href=\"Login?id=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${parAct.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"> REJOINDRE </a></button>   \n");
       out.write("            </div>\n");
       out.write("            <div class=\"row\">\n");
-      out.write("                pied de page\n");
+      out.write("                bite\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("        <!-- Optional JavaScript -->\n");
@@ -126,7 +143,7 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
           out.write(" </p> <a href=\"Login?id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${parAct.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"> REJOINDRE </a>\n");
-          out.write("\n");
+          out.write("                    <!--je dois recuperer lid de la partie choisi -->\n");
           out.write("                    <!--je dois afficher le nombre de joueur inscrit dansd une partie -->\n");
           out.write("                    <br> \n");
           out.write("                ");
@@ -146,6 +163,24 @@ public final class lister_002dparties_jsp extends org.apache.jasper.runtime.Http
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent(null);
+    _jspx_th_c_url_0.setValue("/CrerNouvellePartie");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 }

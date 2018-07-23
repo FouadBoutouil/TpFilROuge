@@ -61,6 +61,7 @@ public final class listerParties_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css\"\n");
       out.write("              integrity=\"sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B\" crossorigin=\"anonymous\">\n");
       out.write("        <link href= \"https://fonts.googleapis.com/css?family=Denk+One\" rel=\"stylesheet/less\" type=\"text/css\" href=\"CSS/1.less\">\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/css?family=Nosifer\" rel=\"stylesheet\">\n");
       out.write("        <meta charset=\"utf-8\">\n");
       out.write("        <title> INTERFACE JEUX CARTE </title>\n");
       out.write("        <script src='http://use.edgefonts.net/nosifer.js'></script>\n");
@@ -93,11 +94,7 @@ public final class listerParties_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("            </div>\n");
       out.write("\n");
-      out.write("            <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n");
-      out.write("                <button type=\"button\" class=\"btn btn-secondary\">Left</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-secondary\">Middle</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-secondary\">Right</button>\n");
-      out.write("            </div>\n");
+      out.write("           \n");
       out.write("            <div>\n");
       out.write("                <a href=\"");
       if (_jspx_meth_c_url_0(_jspx_page_context))
